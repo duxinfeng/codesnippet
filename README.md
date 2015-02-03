@@ -3,9 +3,9 @@ iOS 代码片段
 
 图片下载（来源：http://cocoanuts.mobi/2014/04/27/fastscroll/）
 
-- (void)downloadImageWithURL:(NSURL *)url completionBlock:(void (^)(BOOL succeeded, UIImage *image))completionBlock
-{
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    - (void)downloadImageWithURL:(NSURL *)url completionBlock:(void (^)(BOOL succeeded, UIImage *image))completionBlock
+    {
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [NSURLConnection sendAsynchronousRequest:request
                                        queue:[NSOperationQueue mainQueue]
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
@@ -17,5 +17,5 @@ iOS 代码片段
                                    completionBlock(NO,nil);
                                }
                            }];
-}
+    }
 
