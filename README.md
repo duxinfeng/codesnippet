@@ -25,7 +25,8 @@ iOS 代码片段
     #define DF_Defatlut [NSUserDefaults standardUserDefaults]
     //取Default值
     #define DF_DefaultsObjectForKey(key) [[NSUserDefaults standardUserDefaults] valueForKey:key]
-    //存Default值 #define DF_DefaultsSetValueForKey(value,key) [[NSUserDefaults standardUserDefaults] setValue:value forKey:key]
+    //存Default值 
+    #define DF_DefaultsSetValueForKey(value,key) [[NSUserDefaults standardUserDefaults] setValue:value forKey:key]
     #define DF_DefaultRemoveValueForKey(key) [[NSUserDefaults standardUserDefaults] removeObjectForKey:key]
     #define DF_DefaultSynchronize [[NSUserDefaults standardUserDefaults] synchronize]
 
