@@ -48,3 +48,16 @@ iOS 代码片段
 直接取某个数据库宏定义
 
     #define kPath_FMDB [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/xxx.sqlite"]
+
+邮箱和手机号验证
+
+    + (BOOL)isValidEmail:(NSString *)email {
+        NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    return [emailTest evaluateWithObject:email];
+    }
+    + (BOOL)isValidMobile:(NSString *)mobile {
+    NSString *phoneRegex = @"^([0|86|17951]?(13[0-9])|(15[^4,\\D])|(17[678])|(18[0,0-9]))\\d{8}$";
+    NSPredicate *phoneTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",phoneRegex];
+    return [phoneTest evaluateWithObject:mobile];
+    }
